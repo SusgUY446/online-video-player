@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Player</title>
+    <style>
+        body {
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="file" id="videoInput" accept="video/mp4" class="">
+        <video id="videoPlayer" controls  class="hidden"></video>
+    </div>
+    <script>
+        const videoInput = document.getElementById('videoInput');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        videoInput.addEventListener('change', function() {
+        const file = videoInput.files[0];
+        const objectURL = URL.createObjectURL(file);
+        videoPlayer.src = objectURL;
+        videoPlayer.classList.remove("hidden");
+        videoInput.classList.add("hidden");
+        videoPlayer.play();
+        });
+
+    </script>
+</body>
+</html>
