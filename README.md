@@ -1,2 +1,2 @@
-# online-video-player
-a online video player.
+# Online Video Player
+ A online video player written in HTML and JavaScript
